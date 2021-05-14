@@ -1,6 +1,8 @@
-# webpack-basics
+# gordy-becca-wedding-rsvp
 
-a template for making a bare-bones webpack react app. 
+a practice app to let my brother & sister in law I'm going to their wedding.
+
+live on heroku [here](https://gordy-becca-wedding-rsvp.herokuapp.com/)
 
 `npm i` to install node dependencies
 
