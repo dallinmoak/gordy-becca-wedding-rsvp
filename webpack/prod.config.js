@@ -15,6 +15,11 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader','sass-loader']
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: 'javascript/auto',
+        use: [ 'file-loader' ],
       }
     ]
   },
@@ -23,7 +28,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'React Webpack template',
+      title: 'Dallin\'s RSVP',
       template: path.resolve(__dirname, '../static', 'index.html'),
       favicon: path.resolve(__dirname, '../static', 'favicon.ico')
     })

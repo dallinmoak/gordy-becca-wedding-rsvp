@@ -1,4 +1,5 @@
 import  React, { useState, useEffect } from 'react';
+import gordyBecca from '../../static/gordy-becca.png';
 
 export default function App(){
   const [ answer, setAnswer ] = useState('');
@@ -11,6 +12,22 @@ export default function App(){
     'sure, i guess'
   ]
 
+  const answered =  (
+    <div className="answer-wrapper app-item">
+      <p className="app-item-content answer app-answer">✨{answer}✨</p>
+      <button className=" app-item-content answer answer-button" onClick={getAnswer}>
+        Get another one!
+      </button>
+    </div>   
+  )
+  const notAnswered = (
+    <div className="answer-wrapper app-item">
+      <button className=" app-item-content answer answer-button" onClick={getAnswer}>
+        Click to find out!
+      </button>
+    </div>    
+  )
+
   function getAnswer() {
     setAnswer(answers[Math.floor(Math.random()*answers.length)]);
   }
@@ -20,10 +37,12 @@ export default function App(){
   },[])
   
   return (
-    <div>
-      <h1>Will he come to the wedding?</h1>
-      {answer ? <div><p>✨{answer}✨</p> <button onClick={getAnswer}>Get another answer!</button> </div>:
-       <button onClick={getAnswer}>Click to find out!</button> }
+    <div className="app-wrapper">
+      <h1 className="app-header">Dallin: Will he come to the wedding?</h1>
+      {answer ? answered : notAnswered }
+      <div className="app-item img-item">
+        <img className="app-item-content app-img" src={gordyBecca} alt="wedding invite" />
+      </div>
     </div>
   );
 }

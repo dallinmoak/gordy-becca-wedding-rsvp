@@ -1,9 +1,72 @@
-$background: #bdcef1;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=La+Belle+Aurore&family=Pangolin&display=swap');
+
+$background: #cee2ed;
+$dark-border: #261417;
 
 body{
   background-color: $background;
 }
+h1{
+  font-family: 'Pangolin', cursive; 
+}
 
-.main-content h1 {
-  text-decoration: underline;
+p{
+  font-family: 'La Belle Aurore', cursive;
+}
+button{
+  font-family: 'Bebas Neue', cursive;
+}
+
+.app-wrapper{
+  display: grid;
+  grid-template-columns: 20fr 80fr;
+  grid-template-areas: "header header";
+  column-gap: .5em;
+  padding: 1em .5em;
+  .app-item{
+    background-color: white;
+    border-right: 1px solid black;
+    height: 85vh;
+    .app-item-content{
+      text-align: center;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.img-item{
+      background: none;
+      max-height: 85vh;
+      border: none;
+      border-radius: 0;
+    }
+  }
+  .app-header{
+    grid-area: header;
+    justify-self: center;
+  }
+  .answer-wrapper{
+    width: 100%;
+    .answer{
+      font-size: 1em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    .app-answer{
+      color:inherit;
+    }
+    .answer-button{
+      background-color: darken($background, 30);
+      border-radius: .25em;
+      border: 1px solid black;
+      padding: 2em 1em;
+      &:hover{
+        background-color: darken($background, 35);
+        box-shadow: 0 0 .2em black;
+      }
+    }
+  }
+  .app-img{
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
